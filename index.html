@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Navigation Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hud.css">
+    <link rel="stylesheet" href="css/modals.css">
+</head>
+<body>
+
+    <!-- Dynamic Background -->
+    <div class="stars-container"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Futuristic Header -->
+    <header class="navbar-container">
+        <nav class="glass-navbar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">NEON<span class="highlight">CORE</span></span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="code-bracket">[</span>
+                        <span class="link-label">System</span>
+                        <span class="code-bracket">]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="code-bracket">[</span>
+                        <span class="link-label">Datastream</span>
+                        <span class="code-bracket">]</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">
+                        <span class="code-bracket">[</span>
+                        <span class="link-label">Architecture</span>
+                        <span class="code-bracket">]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="code-bracket">[</span>
+                        <span class="link-label">Uplink</span>
+                        <span class="code-bracket">]</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="btn-terminal" class="action-btn secondary">
+                    <span class="btn-scan"></span>
+                    Access Terminal
+                </button>
+                <button id="btn-initialize" class="action-btn primary">
+                    Initialize System
+                </button>
+            </div>
+
+            <div class="scanning-line"></div>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="THE FUTURE IS NOW">THE FUTURE IS NOW</h1>
+            <p class="subtitle">Experience the nexus of design and technology.</p>
+        </div>
+    </main>
+
+    <!-- System Status HUD -->
+    <div class="system-hud">
+        <div class="hud-item">
+            <span class="hud-label">STATUS:</span>
+            <span class="hud-value color-safe">ONLINE</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">CORES:</span>
+            <span class="hud-value" id="hud-cores">08/08</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">LATENCY:</span>
+            <span class="hud-value" id="hud-latency">12ms</span>
+        </div>
+    </div>
+
+    <!-- TERMINAL MODAL -->
+    <div id="terminal-overlay" class="modal-overlay">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-title">SYS_TERMINAL_V.4.0</span>
+                <button class="terminal-close" onclick="closeTerminal()">×</button>
+            </div>
+            <div class="terminal-body" id="terminal-content"></div>
+        </div>
+    </div>
+
+    <!-- BOOT OVERLAY -->
+    <div id="boot-overlay" class="modal-overlay">
+        <div class="boot-container">
+            <div class="boot-loader"></div>
+            <div class="boot-text">INITIALIZING CORE NEURAL NETWORK...</div>
+            <div class="boot-progress">
+                <div class="progress-bar" id="boot-progress-bar"></div>
+            </div>
+            <div id="boot-logs" class="boot-subtext"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
