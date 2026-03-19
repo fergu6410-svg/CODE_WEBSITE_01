@@ -1,0 +1,42 @@
+.system-hud {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.hud-item {
+    display: flex;
+    gap: 12px;
+    border-left: 2px solid var(--glass-border);
+    padding-left: 10px;
+}
+
+.hud-label {
+    font-weight: 300;
+}
+
+.hud-value {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.color-safe {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 0.6; transform: translateX(0); }
+}

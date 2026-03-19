@@ -1,0 +1,61 @@
+:root {
+    --bg-dark: #050510;
+    --neon-cyan: #00f2fe;
+    --neon-magenta: #ff00ff;
+    --neon-violet: #7000ff;
+    --accent-glow: rgba(0, 242, 254, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #e0e0ff;
+    --text-dim: #94a3b8;
+    --font-main: 'Outfit', sans-serif;
+    --font-code: 'Space Grotesk', sans-serif;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-mid: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── BACKGROUND ── */
+.grid-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(112, 0, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(112, 0, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    pointer-events: none;
+    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 90%);
+}
+
+.stars-container {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: radial-gradient(circle at bottom, #110033 0%, #050510 100%);
+}
+
+.cursor-glow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    transition: transform 0.1s ease-out;
+}
